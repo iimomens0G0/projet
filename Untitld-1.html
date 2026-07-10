@@ -1,0 +1,214 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<title>Project Board</title>
+<style>
+  :root {
+    --blue-deep: #0b3d91;
+    --blue-mid: #2563eb;
+    --blue-soft: #dbeafe;
+    --blue-pale: #eff6ff;
+    --white: #ffffff;
+    --ink: #1e293b;
+    --sub: #64748b;
+  }
+
+  * { box-sizing: border-box; }
+
+  body {
+    margin: 0;
+    min-height: 100vh;
+    background: var(--blue-pale);
+    font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, Helvetica, Arial, sans-serif;
+    padding: 32px 0 40px;
+  }
+
+  header {
+    padding: 28px 32px 40px;
+  }
+
+  header h1 {
+    color: var(--white);
+    font-size: 24px;
+    margin: 0 0 4px;
+    letter-spacing: -0.01em;
+  }
+
+  header p {
+    color: var(--blue-soft);
+    font-size: 14px;
+    margin: 0;
+  }
+
+  .board {
+    display: flex;
+    gap: 20px;
+    padding: 0 32px;
+    align-items: flex-start;
+    flex-wrap: wrap;
+  }
+
+  .column {
+    background: var(--white);
+    border-radius: 12px;
+    padding: 14px;
+    width: 280px;
+    box-shadow: 0 4px 16px rgba(11, 61, 145, 0.12);
+  }
+
+  .column-header {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    padding: 4px 6px 12px;
+  }
+
+  .column-title {
+    font-size: 15px;
+    font-weight: 1000;
+    color: var(--blue-deep);
+    text-transform: uppercase;
+    letter-spacing: 0.04em;
+    margin: 0;
+  }
+
+  
+  
+
+  .card {
+    background: var(--white);
+    border: 1px solid #e2e8f0;
+    border-radius: 10px;
+    padding: 12px 12px 10px;
+    margin-bottom: 10px;
+    box-shadow: 0 1px 2px rgba(11, 61, 145, 0.08);
+    cursor: pointer;
+  }
+
+  .card:last-child { margin-bottom: 0; }
+
+  .label {
+    display: inline-block;
+    height: 6px;
+    width: 32px;
+    border-radius: 4px;
+    margin-right: 5px;
+  }
+
+  
+
+  .card-title {
+    font-size: 14px;
+    font-weight: bold;
+    color: var(--ink);
+    margin: 0 0 10px;
+    line-height: 1.35;
+  }
+
+  .card-footer {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+  }
+
+  .avatar {
+    width: 24px;
+    height: 24px;
+    border-radius: 50%;
+    background: var(--blue-mid);
+    color: var(--white);
+    font-size: 11px;
+    font-weight: bold;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+  }
+
+  .status {
+    font-size: 11px;
+    font-weight: bold;
+    display: flex;
+    align-items: center;
+    gap: 4px;
+  }
+  .status.to { color: #223782; }
+  .status.progress { color:#1f399a ; }
+  .status.done { color: #627ce8; }
+
+  .status svg { width: 13px; height: 13px; }
+
+</style>
+</head>
+<body>
+
+  <div class="board">
+
+    <div class="column">
+      <div class="column-header">
+        <p class="column-title">To Do</p>
+        
+      </div>
+
+      <div class="card">
+        <div class="labels">
+          <span class="label light"></span>
+        </div>
+        <p class="card-title">Write the project brief</p>
+        <div class="card-footer">
+          <div class="avatar">RT</div>
+          <span class="status to do">
+          <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round"><circle cx="12" cy="12" r="9"/><path d="M12 7v5l3 3"/></svg>
+            To do
+        </div>
+      </div>
+    </div>
+
+    <div class="column">
+      <div class="column-header">
+        <p class="column-title">In Progress</p>
+        
+      </div>
+
+      <div class="card">
+        <div class="labels">
+          <span class="label dark"></span>
+          <span class="label mid"></span>
+        </div>
+        <p class="card-title">Design the homepage layout</p>
+        <div class="card-footer">
+          <div class="avatar">SK</div>
+          <span class="status progress">
+            <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round"><circle cx="12" cy="12" r="9"/><path d="M12 7v5l3 3"/></svg>
+            In progress
+          </span>
+        </div>
+      </div>
+    </div>
+
+    <div class="column">
+      <div class="column-header">
+        <p class="column-title">Done</p>
+       
+      </div>
+
+      <div class="card">
+        <div class="labels">
+          <span class="label mid"></span>
+          <span class="label light"></span>
+        </div>
+        <p class="card-title">Choose a theme (white &amp; blue)</p>
+        <div class="card-footer">
+          <div class="avatar">JD</div>
+          <span class="status done">
+            <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M9 11l3 3 8-8M20 12v6a2 2 0 01-2 2H6a2 2 0 01-2-2V6a2 2 0 012-2h9"/></svg>
+            Done
+          </span>
+        </div>
+      </div>
+    </div>
+
+  </div>
+
+</body>
+</html>
